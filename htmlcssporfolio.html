@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbhinavChauhan's Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #201c1c;
+            color: #fff;
+        }
+
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 1rem;
+            text-align: left;
+            /* Removed position: sticky; */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: right;
+            gap: 0.1rem;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+        }
+
+        .section {
+            margin: 2rem 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* About Me Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .about-text {
+            max-width: 60%;
+            text-align: justify;
+            margin: 0 auto;
+        }
+
+        .about-highlights {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .about-highlights li {
+            margin: 0.5rem 0;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-left: 2rem;
+        }
+
+        /* Tabs and Projects Section */
+        .tabs-container {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        .tabs {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 200px;
+            background-color: #000000;
+            border-right: 2px solid #ccc;
+        }
+
+        .tabs .tab {
+            padding: 1rem;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .tabs .tab:hover {
+            background-color: #444;
+        }
+
+        .tabs .tab.active {
+            background-color: #201c1c;
+        }
+
+        .tab-content {
+            padding: 1rem;
+            flex-grow: 1;
+            background-color: #fff;
+            color: #000;
+            border-radius: 5px;
+            margin-left: 1rem;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* Footer for Contact Section */
+        footer {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            margin: 0.5rem;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img src="pfp1.jpeg" 
+                     alt="Profile Picture" 
+                     class="profile-img">
+                <div class="about-text">
+                    <p>Hello! My name is <strong>Abhinav Chauhan</strong>, and I am a sophomore at <strong>Graphic Era Deemed University</strong>, pursuing a BTech in Computer Science.</p>
+                    <p>Ever since my early years, I have been deeply fascinated by the world of computers and technology. My passion for innovation and problem-solving drives me to explore and develop solutions in this dynamic field.</p>
+                    <ul class="about-highlights">
+                        <li>Specialized in AI and Machine Learning.</li>
+                        <li>Enthusiastic about combining creativity with technology.</li>
+                        <li>Passionate about exploring cutting-edge developments in Computer Science.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="tabs-container">
+                <!-- Tabs -->
+                <ul class="tabs">
+                    <li class="tab active" onclick="showTab('tab1')">Project 1</li>
+                    <li class="tab" onclick="showTab('tab2')">Project 2</li>
+                    <li class="tab" onclick="showTab('tab3')">Project 3</li>
+                </ul>
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane active">
+                        <h3>Dog Cancer Detection:</h3>
+                        <p><q>An AI-ML powered solution to diagnose and combat cancer in canines effectively.</q></p>
+                    </div>
+                    <div id="tab2" class="tab-pane">
+                        <h3>Dietary Counter:</h3>
+                        <p><q>Your personal assistant for tracking dietary habits and managing caloric intake effectively.</q></p>
+                    </div>
+                    <div id="tab3" class="tab-pane">
+                        <h3>Health-Conscious Cookbook: </h3>
+                        <p><q>A healthy recipe guide tailored to your dietary needs, adjusting ingredients to fit your lifestyle.</q></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>You can reach me via:</p>
+            <div class="contact-links">
+                <a href="mailto:nwskopium@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/abhinav-chauhan-914011309" target="_blank">LinkedIn</a>
+                <a href="https://github.com/n0wskopium" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Abhinav Chauhan</p>
+    </footer>
+
+    <!-- JavaScript for Tab Switching -->
+    <script>
+        function showTab(tabId) {
+            const panes = document.querySelectorAll('.tab-pane');
+            panes.forEach((pane) => pane.classList.remove('active'));
+
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach((tab) => tab.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
