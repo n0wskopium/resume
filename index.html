@@ -1,0 +1,379 @@
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abhinav Chauhan's Portfolio - Showcasing expertise in AI, Machine Learning, and creative projects.">
+    <meta name="keywords" content="Abhinav Chauhan, AI, Machine Learning, Portfolio, Projects, Contact">
+    <title>Abhinav Chauhan's Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2f;
+            color: #e6e6e6;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            background-image: url('https://i.pinimg.com/originals/41/60/61/416061b9d95e206d7bbeb51e644cca6e.gif');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding-top: 60px; /* Prevent overlap with header */
+        }
+    
+        header {
+            background-color: rgba(21, 22, 34, 0.9); /* Semi-transparent header */
+            color: #e6e6e6;
+            padding: 1rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+    
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+    
+        nav ul li a {
+            color: #e6e6e6;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+    
+        nav ul li a:hover {
+            background-color: #353547;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+    
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+        }
+    
+        .section {
+            margin: 2rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+    
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        .section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: #ffd700;
+        }
+    
+        /* About Me Section */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+    
+        .about-text {
+            max-width: 60%;
+            text-align: justify;
+            margin: 0 auto;
+        }
+    
+        .about-highlights {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+    
+        .about-highlights li {
+            margin: 0.5rem 0;
+            color: #ffd700;
+        }
+    
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+    
+        .profile-img.default {
+            content: url('pfp1.jpeg');
+        }
+    
+        .profile-img:hover.default {
+            content: url('pfp2.jpeg');
+        }
+    
+        .about-text {
+            display: none;
+            transition: all 0.3s ease;
+        }
+    
+        .about-text.visible {
+            display: block;
+        }
+    
+        /* Tabs and Projects Section */
+        .tabs-container {
+            display: flex;
+            margin-top: 1rem;
+        }
+    
+        .tabs {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 200px;
+            background-color: #151522;
+            border-right: 2px solid #ffd700;
+        }
+    
+        .tabs .tab {
+            padding: 1rem;
+            color: #e6e6e6;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+    
+        .tabs .tab:hover {
+            background-color: #353547;
+        }
+    
+        .tabs .tab.active {
+            background-color: #353547;
+        }
+    
+        .tab-content {
+            padding: 1rem;
+            flex-grow: 1;
+            background-color: #252539;
+            color: #e6e6e6;
+            border-radius: 5px;
+            margin-left: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+    
+        .tab-pane {
+            display: none;
+        }
+    
+        .tab-pane.active {
+            display: block;
+        }
+    
+        /* Contact Section */
+        .form-container {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #252539;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+    
+        .form-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+    
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #151522;
+            color: #e6e6e6;
+            font-size: 1rem;
+        }
+    
+        .form-container input:focus,
+        .form-container textarea:focus {
+            outline: none;
+            box-shadow: 0 0 5px #ffd700;
+        }
+    
+        .form-container button {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffd700;
+            color: #1e1e2f;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .form-container button:hover {
+            background-color: #e6c300;
+        }
+    
+        /* Contact Icons */
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 1rem;
+        }
+    
+        .contact-icons a {
+            color: #ffd700;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+    
+        .contact-icons a:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Abhinav Chauhan's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" aria-label="About Section">About</a></li>
+                <li><a href="#projects" aria-label="Projects Section">Projects</a></li>
+                <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img 
+                    src="pfp1.jpeg" 
+                    alt="Abhinav Chauhan's Profile Picture" 
+                    class="profile-img default" 
+                    onclick="toggleAbout()" 
+                    loading="lazy">
+                <div class="about-text" id="about-text">
+                    <p>Hello! My name is <strong>Abhinav Chauhan</strong>, and I am a sophomore at <strong>Graphic Era Deemed University</strong>, pursuing a BTech in Computer Science.</p>
+                    <ul class="about-highlights">
+                        <li>Specialized in AI and Machine Learning.</li>
+                        <li>Enthusiastic about combining creativity with technology.</li>
+                        <li>Passionate about exploring cutting-edge developments in Computer Science.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="tabs-container">
+                <ul class="tabs" role="tablist">
+                    <li class="tab active" onclick="showTab('tab1')" aria-label="Dietary Counter Project">Dietary Counter</li>
+                    <li class="tab" onclick="showTab('tab2')" aria-label="Health-Conscious Cookbook Project">Health-Conscious Cookbook</li>
+                    <li class="tab" onclick="showTab('tab3')" aria-label="AI Model for Cancer Detection Project">AI Model for Cancer Detection</li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane active">
+                        <h3>Dietary Counter</h3>
+                        <p>Track and monitor your daily diet with this intelligent application.</p>
+                    </div>
+                    <div id="tab2" class="tab-pane">
+                        <h3>Health-Conscious Cookbook</h3>
+                        <p>Find healthy recipes based on your dietary restrictions and preferences.</p>
+                    </div>
+                    <div id="tab3" class="tab-pane">
+                        <h3>AI Model for Cancer Detection</h3>
+                        <p>Developing a model to help diagnose and detect cancer early in dogs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <div class="contact-icons">
+                <a href="mailto:abhinavchauhanac2005@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/abhinav-chauhan-914011309" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/n0wskopium" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="form-container">
+                <form id="contactForm" action="http://localhost:3000/contact" method="POST" enctype="multipart/form-data">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
+                    <label for="profileImage">Upload Image (optional):</label>
+                    <input type="file" id="profileImage" name="profileImage" accept="image/*" loading="lazy">
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function toggleAbout() {
+            const aboutText = document.getElementById('about-text');
+            aboutText.classList.toggle('visible');
+        }
+
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-pane');
+            const buttons = document.querySelectorAll('.tab');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Reveal sections on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
