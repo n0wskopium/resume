@@ -1,0 +1,13 @@
+express
+multer
+path
+mysql2
+body-parser
+dotenv
+
+1.Create a package.json file (if you don't have one already) by running:
+  npm init -y
+
+2.Install the dependencies listed above by running:
+  npm install express multer path mysql2 body-parser dotenv
+  
