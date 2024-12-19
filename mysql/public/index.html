@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Chauhan's Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="uploads/images/favicon.png" type="image/png">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Abhinav Chauhan's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img 
+                    src="uploads/images/pfp1.jpeg" 
+                    alt="Abhinav Chauhan's Profile Picture" 
+                    class="profile-img default"
+                    onclick="toggleAbout()">
+                <div class="about-text" id="about-text">
+                    <p>Hello! My name is <strong>Abhinav Chauhan</strong>, and I am a sophomore at <strong>Graphic Era Deemed University</strong>, pursuing a BTech in Computer Science.</p>
+                    <ul class="about-highlights">
+                        <li>Specialized in AI and Machine Learning.</li>
+                        <li>Enthusiastic about combining creativity with technology.</li>
+                        <li>Passionate about exploring cutting-edge developments in Computer Science.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="tabs-container">
+                <ul class="tabs">
+                    <li class="tab active" onclick="showTab('tab1')">Dietary Counter</li>
+                    <li class="tab" onclick="showTab('tab2')">Health-Conscious Cookbook</li>
+                    <li class="tab" onclick="showTab('tab3')">AI Model for Cancer Detection</li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane active">
+                        <h3>Dietary Counter</h3>
+                        <p>Track and monitor your daily diet with this intelligent application.</p>
+                    </div>
+                    <div id="tab2" class="tab-pane">
+                        <h3>Health-Conscious Cookbook</h3>
+                        <p>Find healthy recipes based on your dietary restrictions and preferences.</p>
+                    </div>
+                    <div id="tab3" class="tab-pane">
+                        <h3>AI Model for Cancer Detection</h3>
+                        <p>Developing a model to help diagnose and detect cancer early in dogs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <div class="contact-icons">
+                <a href="mailto:nwskopium@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/abhinav-chauhan-914011309" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/n0wskopium" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <form id="contactForm" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            
+                <label for="attachment">Attachment:</label>
+                <input type="file" id="attachment" name="attachment">
+            
+                <button type="submit">Send Message</button>
+            </form>
+            
+            <div id="messages"></div>
+        </section>
+    </div>
+</body>
+</html>
